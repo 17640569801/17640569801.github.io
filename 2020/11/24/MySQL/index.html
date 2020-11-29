@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2020/11 | Hexo</title>
+  <title>MySQL | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2020/11/index.html">
+  <meta name="description" content="摘要: 数据库管理 表管理 事务 存储过程 JDBC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL">
+<meta property="og:url" content="http://example.com/2020/11/24/MySQL/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="摘要: 数据库管理 表管理 事务 存储过程 JDBC">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-24T05:28:55.000Z">
+<meta property="article:modified_time" content="2020-11-28T13:49:24.643Z">
 <meta property="article:author" content="头秃程序员">
+<meta property="article:tag" content="数据库管理 表管理 事务 存储过程 JDBC">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -152,73 +157,83 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-MySQL" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/28/javaweb/" class="archive-article-date">
-  	<time datetime="2020-11-28T13:09:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/28/javaweb/">javaweb</a>
+    <h1 class="article-title" itemprop="name">
+      MySQL
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaScript JQuery</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/24/MySQL/" class="archive-article-date">
+        
+        <a href="/2020/11/24/MySQL/" class="archive-article-date">
   	<time datetime="2020-11-24T05:28:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-24</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/24/MySQL/">MySQL</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要: 数据库管理 表管理 事务 存储过程 JDBC</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<h1 id="数据库相关操作"><a href="#数据库相关操作" class="headerlink" title="数据库相关操作"></a>数据库相关操作</h1><p>1.MySQL卸载：先停止MySQL服务，卸载MySQL软件，清除残余文件，在之前安装MySQL目录下查找对应的残余文件，如果之前没有选择目录的话，默认在C:\ProgramData\mysql，如果不能安装MySQL，百度查看需要清理的注册表<br>2.更改配置文件：找到安装的MySQL，找到my.ini，在[mysqld]下可以进行配置的更改，更改后需要进行服务器重启才能拿生效<br>（1）port=3306表示端口号<br>（2）basedir=””表示安装路径<br>（3）datadir=””表示数据库存储路径<br>（4）character-set-server=utf8表示字符编码（支持事务）<br>（5）sql-mode=”STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION”语法模式，可以选择<br>（6）max_connections=100最大连接数<br>3.启动停止数据库的两种方式<br>（1）在服务中将mysql启动与停止<br>（2）使用管理员身份在cmd命令行窗口下输入net start 数据库名称(默认mysql)可以启动数据库，net stop  数据库名称可以停止数据库<br>4.客户端登录<br>（1）在所有程序中找到数据库自带的客户端，不过这种方式只能以root身份登录<br>（2）以命令行的方式启动数据库<br>①连接本地主机：mysql -u root -p<br>②连接特定主机：mysql -h特定主机ip -P端口号(一般3306) -u -root -p<br>5.查看数据库中有多好个表：show databases（下面数数据库的基本表）<br>（1）information_schema是数据库服务端基本的信息数据（最好不要动）<br>（2）mysql保存的一些用户信息，表信息，时区信息，库信息（最好不要动）<br>（3）performance_schema数据库性能的信息（最好不要动）<br>（4）test是测试的数据库，可以进行修改<br>6.打开数据库：use 数据库名称；删除数据库：drop database 数据库名;<br>7.直接显示数据库中的表：show tables form 数据库名;<br>8.数据库的主要组成部分：表，视图，存储过程，函数，触发器，事件<br>9.将数据库当中的数据导出<br>（1）导出整个库：mysqldump 数据库名&gt;路径数据库名称.sql -u用户名 -p密码<br>（2）导出指定数据库的指定表：mysqldump 数据库名 表名&gt;路径数据库名称.sql -u用户名 -p密码<br>10.导入数据<br>（1）创建数据库：create datebase 数据库名;<br>（2）进入数据库：use 数据库名;<br>（3）source 路径数据库名称.sql<br>11.数据库设计三范式<br>（1）什么是设计范式：设计表的依据，按照这个三范式设计表不会出现数据冗余<br>（2）第一范式：任何一张表都应该有主键，并且每个字段都是原子性不可再分的<br>（3）第二范式：在满足第一范式的基础上，所有非主键字段完全依赖于主键，不能产生部分依赖，不建议使用联合主键，因为非主键字段可能依赖于主键的某个字段（在多对多的关系中，设计时采用三张表，关系表中有两个外键）<br>（4）第三范式：建立在第二范式的基础之上，所有非主键字段直接依赖于主键，不能产生传递依赖（在一对多的关系中，设计时采用两张表，多的表加外键）<br>（5）在实际开发中，以满足客户需求为主，有的时候会拿冗余换速度<br>12.数据库经典设计方案（一对一设计的两种方案）<br>（1）在实际开发中，最好将用户登录表（包含ID和用户名和密码）设计成一张表，用户的详细信息设计成另一张表（包含ID以及其他信息）<br>（2）主键共享，其中用户登录表的ID为主键，用户详细信息表中的ID即是主键也是外键<br>（3）外键唯一：用户登录表ID为主键，用户详细信息表ID也为主键，在用户详细信息表中加一个userid字段作为外键，引用用户登录表的主键，并且这个外键加unique约束（唯一约束）<br>13.存储引擎（ENGINE）<br>（1）查看表的存储引擎：show create table 表名;<br>（2）创建表时，如果没有指定存储引擎，默认的是InnoDB<br>（3）完整的建表语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> CREATE TABLE &#96;s表名&#96; (</span><br><span class="line">  &#96;字段名&#96; int(11) DEFAULT NULL,</span><br><span class="line">) ENGINE&#x3D;存储引擎名称 DEFAULT CHARSET&#x3D;字符集</span><br></pre></td></tr></table></figure>
+<p>（4）MyISAM存储引擎：是mysql最常用的存储引擎，不支持事务，使用三个文件表示每个表，可被转换为压缩，只读表来节省空间<br>（5）InnoDB存储引擎：支持事务，行级锁，外键等机制，这种存储数据的安全得到了保证，表的结构存储在xxx.frm文件中，数据存储在tablespace这样的空间中，无法被压缩，无法转换成只读，在数据库崩溃之后提供自动恢复机制，支持级联删除和级联更新<br>（6）MEMORY存储引擎：不支持事务，数据容易丢失，因为所有数据和内存都是存储在内存之中，优点是查询速度最快</p>
+<hr>
+<h1 id="表的相关操作"><a href="#表的相关操作" class="headerlink" title="表的相关操作"></a>表的相关操作</h1><p>1.创建表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE IF NOT EXISTS 表名(	#IF NOT EXISTS是为了提高容错性</span><br><span class="line">字段名 字段类型 [字段约束],（字段指的是列）</span><br><span class="line">字段名 字段类型 [字段约束]</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>2.查看表的描述：desc 表名;<br>3.修改字符集：set names 字符集名称<br>4.为表添加新字段：alter table 表名 column 列名 数据类型;<br>5.删除表：DROP TABLE IF EXISTS 表名;<br>6.复制表<br>（1）复制表的结构：CREATE TABLE 新表名 LIKE 旧表名<br>（2）复制表的结构加数据：CREATE TABLE 新表名 查询语句<br>（3）复制表的一部分字段到新表：CREATE TABLE 新表名 SELECT 需要的字段名 FROM 数据库名.表名 WHERE 1=2<br>7.数据类型<br>（1）int：整型<br>（2）double/float：浮点型，如double(5,2)表示最多5位，小数占2位，可以省略<br>（3）decimal：也是浮点型，用于表示钱方面的类型，不会出现精度丢失<br>（4）char(n)：固定长度的字符，char(n)，其中n可省，不写默认为1，效率比varchar高一些，<br>（5）varchar(n)：可变长度的字符，根据实际存储情况决定分配空间<br>（6）text：字符串类型，表示存储较长文本<br>（7）data：日期类型，格式为yyyy-MM-dd，只有年月日<br>（8）time：时间类型，格式为hh:mm:ss，只有时分秒<br>（9）datatime/timestamp：完整的年月日时分秒<br>（10）BLOG：存储图片数据（SQL语句无法存储图片，需要用到JDBC）<br>8.常见约束：用于限制表中字段的数据的，从而进一步保证数据表的数据是一致的，准确的，可靠的<br>（1）NOT NULL：非空约束，用于限制该字段为必填项<br>（2）DEFAULT：默认约束，用于限制该字段没有显式插入值，则会直接显式默认值<br>（3）（3）PRIMARY KEY：主键约束，用于限制该字段的值不能重复，具备唯一性，设置主键的字段默认不能够为空，一个表只能有一个主键，可以是组合主键（多个字段为一个主键）<br>（4）UNIQUE：唯一约束，限制该字段的值不能重复，可以为空<br>（5）CHECK：检测约束，用于限制该字段的值必须满足指定条件，如CHECK(age BETWEEN 1 AND 100)，MYSQL不支持CHECK<br>（6）FOREING KEY：外键约束，用于限制两个表的关系，要求外键列的值必须来自于主表的关联列<br>①主表的关联列和从表的关联列类型必须一致<br>②主表的关联列必须是主键<br>③语法（在表的最后）：CONSTRAINT 约束名（这个是可选的） FORING KEY (本表的字段名) REFERENCES 被引用的表名(被引用表的字段名)<br>9.修改表<br>（1）修改表名：ALTER TABLE 原表名 RENAME TO 新表名<br>（2）添加字段：ALTER TABLE 表名 ADD COLUMN 字段名 字段类型 [字段约束];<br>（3）修改字段名：ALTER TABLE 表名 CHANGE COLUMN 旧字段名 新字段名 字段类型;<br>（4）修改字段类型：ALTER TABLE 表名 MODIFY COLUMN 字段名 字段类型 [字段约束];<br>（5）删除字段：ALTER TABLE 表名 DROP COLUMN 字段名;<br>10.视图：站在不同的角度去看数据（同一张表，通过不同的角度去看待）<br>（1）创建视图：create view 视图名 as select 列名 [别名] from 表名<br>（2）删除视图：drop view 视图名<br>（3）对视图进行增删改查会影响原表数据（通过视图影响原表数据的，不是直接操作原表）<br>（4）视图的作用：视图可以隐藏表的细节，保密级别较高的系统，数据库只对外提供相关的视图，java程序员只对视图对象进行CURD</p>
+<hr>
+<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>1.概念：一个事务由一条或多条SQL语句构成，这一条或多条SQL语句要么全部执行成功，要么全部执行不成功，事务的存在是为了保证数据的完整性和安全性，和事务相关的语句只有增删改<br>2.事务的四大特性（ACID）<br>（1）原子性：事务中的所有操作都是不可分割的原子单位，那么执行都成功，要么执行都失败<br>（2）一致性：事务执行前和执行后，数据库的状态和其他业务规则保持一致<br>（3）隔离性：隔离性是指在并发操作中，不同事务应该隔离开来，使每个并发中的事务不会互相干扰<br>（4）（4）持久性：一旦事务提交成功，事务中所有的数据操作都必须被持久化到数据库中，即使提交事务后，数据库马上崩溃，在数据库重启时，也必须能保证通过某种机制恢复数据库<br>3.分类<br>（1）隐式事务：没有明显的开启和结束标记，如增删改本身就是一条事务<br>（2）显示事务：具有明显的开启和结束标记，一般由多条SQL语句组成，必须具有明显的开启和结束标记。下面是显示事务的步骤<br>①取消隐式事务自动开启的功能：SET AUTOCOMMIT = 0<br>②开启事务：START TRANSACTION<br>③编写事务，需要的SQL语句（一条或多条）：编写SQL语句<br>④结束事务：正常结束用COMMIT（将缓存文件写到文件中），产生异常用回滚ROLLBACK（清除缓存文件）<br>4.事务的执行原理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">开启事务机制(开始)</span><br><span class="line">	执行增删改操作1(执行成功后，把这个执行记录到数据库的操作历史中，并不会向文件保存一条数据，不会真正的修改硬盘上的数据)</span><br><span class="line">	执行增删改操作1</span><br><span class="line">	...</span><br><span class="line">提交事务或者回滚事务</span><br></pre></td></tr></table></figure>
+<p>5.隔离机制：理论上事务隔离级别包括4个，但MySQL是从第三档开始<br>（1）第一级别：读未提交（read uncommitted），对方事务没有提交时我们的事务可以读取到对方为提交的数据，读未提交存在脏读（Dirty Read）现象：表示读到了脏的数据<br>（2）第二级别：读已提交（read committed），对方事务提交之后的数据，我方可以读取到，读已提交存在的问题是不可重复读（当对方修改数据后，我方读取到的数据和原来不同），这种隔离级别解决了脏读现象<br>（3）第三级别：可重复读（repeatable read），这种隔离级别解决了不可重复读的问题，存在问题：读取到的数据可能是假象<br>（4）第四级别：序列化读/串行化读（serializable），解决了所有问题，效率低，需要事务排队<br>6.MySQL事务默认情况下是自动提交的（只要执行一条DML语句则提交一次），可以通过start transaction启动事务<br>7.两个事务隔离级别演示<br>（1）设置事务的全局隔离级别set global transaction isolation level read uncommitted$<br>（2）查看事务的隔离级别：select @@global.tx_isolation$</p>
+<hr>
+<h1 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h1><p>1.变量：变量分为系统变量和自定义变量<br>2.系统变量：由系统提供，属于服务器层面，系统变量分为全局变量和会话变量<br>（1）查看全局变量：SHOW GLOBAL VARIABLES;<br>（2）查看会话变量：SHOW SESSION VARIABLES;或SHOW VARIABLES<br>（3）查看满足条件的部分系统变量：SHOW GLOBAL|SESSION  VARIABLES LIKE ‘%char%’;<br>（4）查看某个指定系统变量的名称：SELECT @@GLOBAL|SESSION.系统变量名;<br>（5）为某个系统变量赋值：SET GLOBAL|SESSION 系统变量名 = 值;或SET @@GLOBAL|SESSION.系统变量名 = 值;<br>（6）系统变量的作用域：服务器每次启动将为所有的全局变量赋值，针对于所有的会话（连接）有效，但不能跨重启<br>（7）会话变量的作用域：仅针对于当前会话有效<br>3.自定义变量：自定义包括用户变量和局部变量<br>（1）用户变量<br>①作用域是当前会话<br>②声明并初始化：SET @用户变量名=值; 或者 SET @用户变量名:=值; 或者SELECT @用户变量名:=值<br>③赋值（更新用户变量的值）<br>SET @用户变量名=值; 或者 SET @用户变量名:=值; 或者SELECT @用户变量名:=值<br>SELECT 字段 INTO @变量名 FROM 表 WHERE 条件（查询结果只能是一个值）<br>④查看用户变量的值：查看用户变量的值：SELECT @用户变量名;<br>（2）局部变量<br>①作用域：仅仅在定义它的begin end中的第一句话有效<br>②声明：DECLARE 变量名 类型<br>③声明的同时进行初始化：DECLARE 变量名 类型 DEFAULT 值<br>④赋值<br>SET 局部变量名=值; 或者 SET 局部变量名:=值; 或者SELECT @局部变量名:=值<br>SELECT 字段 INTO 局部变量名 FROM 表 WHERE 条件（查询结果只能是一个值）<br>⑤查看局部变量的值：SELECT @局部变量名;<br>4.存储过程<br>（1）概念：存储过程类似于java中的方法，是一组预先编译好的SQL语句的集合<br>（2）存储过程创建语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE PROCEDURE 存储过程名(参数列表)</span><br><span class="line">BEGIN </span><br><span class="line">	存储过程体(一组合法有效的SQL语句)</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+<p>（3）参数列表包含三部分：参数模式 参数名 参数类型（如IN stuname varchar(20)）<br>（4）参数模式<br>①IN：该参数可以作为输入，也就是该参数需要调用方法传入值<br>②OUT：该参数可以作为输出，也就是该参数可以作为返回值<br>③INOUT：该参数可以作为输入又可以作为输出，也就是该参数既需要传入值，有需要返回值<br>（5）如果存储过程体仅仅有一句话，BEGIN END可以省略<br>（6）存储过程体中的每条SQL语句的结尾要求加分号，存储过程的结尾可以使用DELIMITER重新设置，语法：DELIMITER 结束标记<br>（7）调用语法：CALL 存储过程名(实参列表)<br>（8）删除存储过程：DROP PROCEDURE 存储过程名<br>（9）查看存储过程名称：SHOW CREATE PROCEDURE 存储过程名称</p>
+<hr>
+<h1 id="JBDC"><a href="#JBDC" class="headerlink" title="JBDC"></a>JBDC</h1><p>1.JDBC全称java Database Connectivity，称为java和数据库的连接技术，sun公司提出的一套java应用程序访问数据库的技术规范（一旦提到规范，那么抽象类和接口居多）<br>2.在java中，数据库存取技术可分为如下几类<br>（1）JDBC直接访问数据库<br>（2）JDO技术（Java Data Object）<br>（3）第三方OR工具，如Hibernate，Mybatis等<br>3.JDBC开发前的准备工作：先从官网下载对应的驱动jar包，如果有文本编辑器开发要将jar包配置到环境变量classpath中，用开发工具开发将jar包复制到项目的根目录或者libs目录下，然后右击build path-add to build path<br>4.JDBC编程六步（需要记下来）<br>（1）注册驱动（告诉java程序即将要连接的是哪个品牌的数据库）<br>（2）获取连接（表示JVM的进程和数据库进程之间的通道打开了）<br>（3）获取数据库操作对象（执行SQL语句的对象，属于进程间通信，重量级的，使用完之后一定要关闭）<br>（4）执行SQL语句（DQL DML…）<br>（5）处理查询结果集（只有当第四步是select语句的时候，才有这第五步处理查询结果集）<br>（6）释放资源（使用完资源之后一定要关闭数据库，java和数据库之间属于进程间通信，开启之后一定要关闭）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">Connection conn &#x3D; null;</span><br><span class="line">Statement stmt &#x3D; null;</span><br><span class="line">ResultSet rs &#x3D; null; &#x2F;&#x2F;结果集</span><br><span class="line">ResourceBundle bundle &#x3D; ResourceBundle.getBundle(&quot;jdbc&quot;); &#x2F;&#x2F;这里绑定了类路径下的properties文件</span><br><span class="line">String driver &#x3D; bundle.getString(&quot;driver&quot;);</span><br><span class="line">String url &#x3D; bundle.getString(&quot;url&quot;);</span><br><span class="line">String user &#x3D; bundle.getString(&quot;user&quot;);</span><br><span class="line">String password &#x3D; bundle.getString(&quot;password&quot;);</span><br><span class="line">try &#123;</span><br><span class="line">	Class.forName(driver);&#x2F;&#x2F;注册驱动</span><br><span class="line">	conn &#x3D; DriverManager.getConnection(url, user, password);&#x2F;&#x2F;获取连接</span><br><span class="line">	stmt &#x3D; conn.createStatement();&#x2F;&#x2F;获取数据库对象</span><br><span class="line">	String sql &#x3D; &quot;select stuid, stuname from stuin&quot;;&#x2F;&#x2F;执行SQL</span><br><span class="line">	rs &#x3D; stmt.executeQuery(sql); &#x2F;&#x2F;专门执行DQL的方法</span><br><span class="line">	&#x2F;&#x2F;处理查询结果集</span><br><span class="line">	System.out.println(&quot;stuid  stuname&quot;);</span><br><span class="line">	while (rs.next()) &#123;</span><br><span class="line">		int stuid &#x3D; rs.getInt(&quot;stuid&quot;); &#x2F;&#x2F;列名称不是表中的列，是查询结果集中的列</span><br><span class="line">		String stuname &#x3D; rs.getString(&quot;stuname&quot;);</span><br><span class="line">		System.out.println(stuid + &quot; &quot; + stuname);</span><br><span class="line">	&#125;</span><br><span class="line">&#125; catch (Exception e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125; finally &#123;</span><br><span class="line">	if (rs !&#x3D; null) &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			rs.close();</span><br><span class="line">		&#125; catch (Exception e2) &#123;</span><br><span class="line">			e2.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if (rs !&#x3D; null) &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			stmt.close();</span><br><span class="line">		&#125; catch (Exception e2) &#123;</span><br><span class="line">			e2.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if (rs !&#x3D; null) &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			conn.close();</span><br><span class="line">		&#125; catch (Exception e2) &#123;</span><br><span class="line">			e2.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;properties文件（文件名为：jdbc.properties）</span><br><span class="line">driver&#x3D;com.mysql.jdbc.Driver</span><br><span class="line">url&#x3D;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;student</span><br><span class="line">user&#x3D;root</span><br><span class="line">password&#x3D;123</span><br></pre></td></tr></table></figure>
+<p>5.SQL注入：用户名随意写，密码写成：用户名’ or ‘1’=’1会进行SQL注入，因为密码会当成SQL语句编译进入，SQL语句会变成select username,password from 表名 where username = 用户名 and password = 密码 or ‘1’ = ‘1’<br>（1）导致SQL注入的根本原因：用户输入的信息中，有SQL语句的关键字，并且这些SQL语句参与了SQL语句的编译过程，导致SQL语句的原意被扭曲，进而达到SQL注入<br>（2）解决SQL注入：只要用户提供的信息不参与SQL语句的编译过程，我们可以使用PreparedStatement，原理是预先对SQL语句框架进行编译，然后再给SQL语句传“值”<br>6.Statement和PreparedStatement的区别<br>（1）PreparedStatement解决了SQL注入问题<br>（2）Statement编译一次执行一次，PreparedStatement编译一次执行N次，PreparedStatement的效率要高一些<br>（3）PreparedStatement会在编译阶段进行类型的安全检查<br>（4）PreparedStatement使用较多，只有业务要求必须支持SQL注入的时候（如用户在控制台输入dsc就是降序，输入asc就是升序）<br>7.java代码控制MySQL数据库事务<br>（1）JDBC中的事务是自动提交的，只要执行任意一条DML语句，则自动提交一次，这是JDBC默认的事务行为，但在实际业务中，通常是多条DML语句联合完成，要保证这些DML语句在一个事务中同时成功或者失败<br>（2）修改JDBC的自动提交机制<br>①关闭自动提交机制（在获取连接之后）：conn.setAutoCommit(false);<br>②提交事务：conn.commit();<br>③在异常处理机制中需要加入回滚：conn.rollback();<br>（3）数据库集群控制事务要用分布式事务<br>8.行级锁（又被成为悲观锁）：在select语句后加for update，表示查询到的记录被锁住了，在当前事务没有结束时，别的事务无法对这些数据进行修改，特点：事务排队执行，数据被锁住了，不允许并发<br>9.乐观锁：多线程并发，都可以对某条记录进行修改，只不过在记录上有一个版本号（如版本号1.0），当两个线程同时想修改这条记录，当第一个线程提前修改记录，并将版本号设置为2.0，此时第二个线程对数据进行修改，在提交之前发现版本号已经被改了，会进行回滚操作<br>10.DAO（date access object）：接口，实现类，工厂类的方法来完成数据操作</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i><i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -230,57 +245,128 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://17640569801.github.ioMySQL/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/06/java%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2020-11-06T06:56:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-06</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/11/28/javaweb/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          javaweb
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/06/java%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVASE总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/06/java%E5%9F%BA%E7%A1%80/">JAVASE总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面向对象 异常 常用类 容器 多线程 IO 网络编程 反射 注解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">数据库相关操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%A8%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">表的相关操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1"><span class="toc-number">3.</span> <span class="toc-text">事务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">存储过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JBDC"><span class="toc-number">5.</span> <span class="toc-text">JBDC</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -305,8 +391,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -8,16 +8,17 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>JAVASE总结 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一章 基础知识java运行环境相关知识1.java开发中需要安装JDK，JDK是java的开发环境和运行环境，其中JDK包括JRE，java首先会被编译成为.class文件，再通过JRE运行，JRE包括JVM，JVM用来执行java程序，与操作系统打交道。2.java文件目录bin目录：存放java的一些二进制文件db目录：用来存放数据include目录：包含一些头文件Lib目录：库文件，包含j">
+  <meta name="description" content="摘要:面向对象 异常 常用类 容器 多线程 IO 网络编程 反射 注解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVASE总结">
 <meta property="og:url" content="http://example.com/2020/11/06/java%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="第一章 基础知识java运行环境相关知识1.java开发中需要安装JDK，JDK是java的开发环境和运行环境，其中JDK包括JRE，java首先会被编译成为.class文件，再通过JRE运行，JRE包括JVM，JVM用来执行java程序，与操作系统打交道。2.java文件目录bin目录：存放java的一些二进制文件db目录：用来存放数据include目录：包含一些头文件Lib目录：库文件，包含j">
+<meta property="og:description" content="摘要:面向对象 异常 常用类 容器 多线程 IO 网络编程 反射 注解">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-06T06:56:00.000Z">
-<meta property="article:modified_time" content="2020-11-20T12:39:44.268Z">
+<meta property="article:modified_time" content="2020-11-25T06:43:46.733Z">
 <meta property="article:author" content="头秃程序员">
+<meta property="article:tag" content="面向对象 异常 常用类 容器 多线程 IO 网络编程 反射 注解">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -155,7 +156,8 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-java基础" class="article article-type-post " itemscope itemprop="blogPost">
+            
+<article id="post-java基础" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -175,9 +177,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第一章-基础知识"><a href="#第一章-基础知识" class="headerlink" title="第一章 基础知识"></a>第一章 基础知识</h1><h2 id="java运行环境相关知识"><a href="#java运行环境相关知识" class="headerlink" title="java运行环境相关知识"></a>java运行环境相关知识</h2><p>1.java开发中需要安装JDK，JDK是java的开发环境和运行环境，其中JDK包括JRE，java首先会被编译成为.class文件，再通过JRE运行，JRE包括JVM，JVM用来执行java程序，与操作系统打交道。<br>2.java文件目录<br>bin目录：存放java的一些二进制文件<br>db目录：用来存放数据<br>include目录：包含一些头文件<br>Lib目录：库文件，包含java的一些jar包<br>src.zip：JDK源码文件<br>3.环境变量配置完成后，如果在DOS窗口下输入java出现jre\lib\amd64\jvm.cfg的错误，可以尝试将JDK的环境变量在path中调到第一位</p>
-<h2 id="Eclipse相关操作"><a href="#Eclipse相关操作" class="headerlink" title="Eclipse相关操作"></a>Eclipse相关操作</h2><p>1.更改工作空间：文件 -&gt; 切换工作空间 -&gt; 其他<br>2.快捷键<br>提示：Alt + /<br>快速打印：syso<br>导入包：Alt + Shift + o<br>快速复制当前内容：Ctrl + Alt + 下<br>快速排版：Ctrl + a选中所有内容 -&gt; Ctrl + i<br>3.断点调试<br>标记断点：程序运行到断点就不再运行，等着指挥运行<br>运行下一条语句：F6<br>进入方法体：F5</p>
-<h2 id="java基础内容"><a href="#java基础内容" class="headerlink" title="java基础内容"></a>java基础内容</h2><p>1.左移运算符：3 &lt;&lt; 2等价于3乘2的二次幂；右移运算符：3 &gt;&gt; 2等价于3除2的二次幂(在一定程度上左移右移运算符比*和/效率高)<br>2.获取一个随机数<br>获取一个0-1之间的：Math.random()<br>为随机数设置上限：Math.random(上限值)<br>为随机数设置上下限：Math.random(上限制) + 下限值</p>
+        <p>摘要:面向对象 异常 常用类 容器 多线程 IO 网络编程 反射 注解</p>
+<a id="more"></a>
+<h1 id="第一章-基础知识"><a href="#第一章-基础知识" class="headerlink" title="第一章 基础知识"></a>第一章 基础知识</h1><h2 id="java运行环境相关知识"><a href="#java运行环境相关知识" class="headerlink" title="java运行环境相关知识"></a>java运行环境相关知识</h2><p>1.java开发中需要安装JDK，JDK是java的开发环境和运行环境，其中JDK包括JRE，java首先会被编译成为.class文件，再通过JRE运行，JRE包括JVM，JVM用来执行java程序，与操作系统打交道。<br>2.java文件目录<br>bin目录：存放java的一些二进制文件<br>db目录：用来存放数据<br>include目录：包含一些头文件<br>Lib目录：库文件，包含java的一些jar包<br>src.zip：JDK源码文件<br>3.环境变量配置完成后，如果在DOS窗口下输入java出现jre\lib\amd64\jvm.cfg的错误，可以尝试将JDK的环境变量在path中调到第一位</p>
+<h2 id="Eclipse相关操作"><a href="#Eclipse相关操作" class="headerlink" title="Eclipse相关操作"></a>Eclipse相关操作</h2><p>1.更改工作空间：文件 -&gt; 切换工作空间 -&gt; 其他<br>2.快捷键<br>提示：Alt + /<br>快速打印：syso<br>导入包：Alt + Shift + o<br>快速复制当前内容：Ctrl + Alt + 下<br>快速排版：Ctrl + a选中所有内容 -&gt; Ctrl + i<br>替换内容代码：Ctrl + F<br>一次编辑多行：Alt + Shift + a<br>3.断点调试<br>标记断点：程序运行到断点就不再运行，等着指挥运行<br>运行下一条语句：F6<br>进入方法体：F5</p>
+<h2 id="java基础内容"><a href="#java基础内容" class="headerlink" title="java基础内容"></a>java基础内容</h2><p>1.左移运算符：3 &lt;&lt; 2等价于3乘2的二次幂；右移运算符：3 &gt;&gt; 2等价于3除2的二次幂(在一定程度上左移右移运算符比*和/效率高)<br>2.获取一个随机数<br>获取一个0-1之间的：Math.random()<br>为随机数设置上限：Math.random(上限值)<br>为随机数设置上下限：Math.random(上限制) + 下限值<br>3.带标签的break和continue：可以跳到outer语句里</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">outer:语句</span><br><span class="line">	break&#x2F;continue outer;</span><br></pre></td></tr></table></figure>
+<p>4.从键盘上获取输入的内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Scanner scanner &#x3D; new Scanner(System.in);</span><br><span class="line">String 变量 &#x3D; scanner.next.Line();</span><br><span class="line">int 变量 &#x3D; scanner.nextInt();</span><br></pre></td></tr></table></figure>
+<p>5.将其他进制转换成为二进制：Integer.toBinaryString(十进制数字)<br>6.对一个浮点数进行四舍五入：Math.round(浮点数)<br>7.java中的byte占一个字节<br>8.可变长度参数：在方法的参数中写(参数类型…参数名)<br>一定是三个点，调用方法时可以传任意参数<br>可变长度参数在形参列表中只能是最后一个并且在同一方法中只能出现一次<br>可变长度参数可以当做一个数组来看待，可变长度参数有length属性，并且可以遍历<br>9.计算机英语中的增删改查<br>增：add,save,new<br>删：delete,drop,remove<br>改：update,set,modify<br>查：find,get,query,select</p>
+<hr>
+<h1 id="第二章-面向对象"><a href="#第二章-面向对象" class="headerlink" title="第二章 面向对象"></a>第二章 面向对象</h1><p>1.访问控制修饰符<br>public：表示能被项目中所有的类访问<br>protected：表示可以被同一个包中的类以及其他包中的子类访问<br>default：默认修饰符，只能同一个包中的类能够访问<br>private：表示私有，只能被自己的类访问<br>2.在实际开发中，属性一般设置为private，方法一般设置为public，方法对外提供set和get方法<br>3.一个java文件中只能有一个public类<br>4.栈用来表示方法执行的内存模型，局部变量在栈中存储，堆用来存放创建好的对象和数组，方法去用来存放代码，CLASS对象，字符串常量，静态变量，静态方法<br>5.this是指向自身的一个引用，可以在构造方法中调用其他构造方法，this不能用于static中<br>6.super可以理解为指向父类对象的一个指针，而这个父类指的是离自己最近的一个父类，利用super可以访问父类中的成员或方法<br>7.静态初始化块：在类加载的过程中执行，且执行一次，上溯到Object的静态类初始化块，再向下依次执行子类的静态初始化块，直至执行到自己定义的初始化快中为止<br>8.子类的访问权限要大于等于父类的访问权限，子类重写的方法返回值类型要小于父类的返回值类型<br>9.对象 instanceof 类：判断一个对象是否属于一个类<br>10.创建对象时，成员变量首先进行初始化（int类型初始化为0，引用类型初始化为null）<br>11.两个相同的对象必须具有相同的HashCode<br>12.默认构造器的访问控制权限和类的相同<br>13.抽象类和抽象方法：作用是设计一个规范用来限制子类的设计<br>使用abstract修饰的方法为抽象方法，只有声明没有方法体，子类必须实现抽象方法<br>包含抽象方法的类必须为抽象类<br>抽象类不能实例化，即不能用new实例化对象，只能被子类继承<br>抽象类可以包含属性，方法，构造方法<br>14.接口<br>接口是特殊的抽象类，接口中所有的方法都是抽象的，即public abstract；接口中的属性只能是常量，即public static final，不写也是<br>接口通过interface去定义，可以实现多继承，定义语法：[访问修饰符] interface [extends 父接口1, 父接口2…]<br>子类通过implements来实现接口中的规范，可以实现多个接口<br>接口中可以使用多态完成一些灵活的应用，在大型软件设计中，面向接口编程非常重要，因为需求多变，接口不变，面向接口编程可以解耦合，提高程序的扩展力<br>15.高内聚就是类内部的操作细节自己完成，不允许外部干涉，低耦合是指仅暴露少量方法给外部使用，尽量方便外部调用<br>16.内部类：可读性差，尽量不用（匿名内部类经常使用）<br>非静态内部类：需要定义在外部类内，可以直接访问外部类成员，但外部类不能直接访问非静态内部类成员，非静态内部类不能有静态成员方法<br>静态内部类：可以看成是外部类的静态成员，不能直接访问外部类的实例方法，外部类可以通过静态内部类.名字访问静态内部类实例。创建静态内部类的方式：外部类.内部类 变量名 = new 外部类.内部类();<br>匿名内部类：适合那种只使用一次的类，匿名内部类无访问控制符，没有构造方法，没有名字，语法：new 父类构造器(实参列表) 实现接口(){匿名内部类体}<br>局部内部类：在方法内部定义的内部类，作用域仅限于该方法</p>
+<hr>
+<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><p>1.在程序运行过程中，出现例外的情况被成为异常<br>2.异常处理<br>（1）发生异常时，会生成一个对象，停止当前执行路径，并把异常对象交给JRE<br>（2）捕获异常：JRE得到异常后，寻找相应代码处理异常<br>3.异常分类<br>（1）Throwable：是异常和错误的父类<br>（2）Error：错误，表明JVM已经处于不可恢复的崩溃状态中，可以重启虚拟机<br>（3）Excetion：异常，异常分为RuntimeException（运行时异常），checkedException（已检查的异常）<br>4.RuntimeException：一般是逻辑型异常，有程序员检查处理<br>（1）解决运行时异常：解决逻辑错误，可以进行一个逻辑判断<br>（2）常见的运行异常<br>①空指针异常：NullPointerException<br>②类型转换错误异常：ClassCastException<br>③算数异常：ArithmeticException<br>5.CheckException：已检查异常，在编译的时候编译器会报错<br>（1）捕获异常</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">try &#123;</span><br><span class="line">	语句1;	&#x2F;&#x2F;语句1若抛出异常，语句2不执行</span><br><span class="line">	语句2;</span><br><span class="line">&#125; catch (FileNotFoundException e) &#123;	&#x2F;&#x2F;子类异常必须写在父类异常前</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125; catch (IOException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125; finally &#123;</span><br><span class="line">	不管是否抛出异常，都会执行的语句 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（2）声明异常：在方法后直接写throws IOException，将异常交给上一层处理（调用者处理），若都不处理则交给jre处理<br>（3）手动抛出异常：throw new Exception<br>6.自定义异常：如果继承Exception类，则必须对其进行处理，如果不想处理，可以继承RuntimeException<br>7.子类不能比父类抛出更多的异常<br>8.异常机制的建议<br>（1）避免使用异常处理代替错误处理<br>（2）处理异常不可以代替简单测试<br>（3）异常往往在高层处理<br>9.常见异常<br>（1）ClassCastException：类型转换错误异常<br>（2）ArrayIndexOutofBoundsException：数组下表越界异常<br>（3）NullPointerException：空指针异常<br>（4）ArithmeticException:算数异常</p>
+<hr>
+<h1 id="容器（集合）"><a href="#容器（集合）" class="headerlink" title="容器（集合）"></a>容器（集合）</h1><p>1.集合中不能存放基本的数据类型，另外集合中也不能直接存储java对象，集合中存放的都是java对象的内存地址，集合本身是一个对象，集合存储的是引用<br>2.单个存储元素的集合继承Collection，以键值对的方式存储元素的集合继承Map<br>3.Collection常用的方法<br>（1）add（）：向集合中添加一个元素<br>（2）size（）：获取元素中集合的个数，获取集合中当前元素的个数，不是获取集合的容量<br>（3）clear（）：清空元素中所有元素<br>（4）boolean contains（Object o）：判断当前集合中是否包含对象o（底层调用了equals方法进行比对）<br>（5）boolean remove（元素名称）<br>（6）boolean isEmpty()：判断集合中元素是否为空<br>（7）Object [] toArray()：调用这个方法可以将集合转换成一个数组（了解，使用不多）<br>4.继承Collection的集合（分为list和set）<br>（1）ArrayList底层是数组<br>（2）LinkList底层是双向链表<br>（3）Vector底层是数组，线程安全的，效率较低，使用较少<br>（4）HashSet：底层是HashMap，放到HashSet中的元素等同于放到了HashMap集合的key部分了<br>（4）TreeSet：底层是TreeMap，放到TreeSet集合中的元素等同于放到了TreeMap集合key部分了</p>
 
       
 
@@ -212,6 +228,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面向对象 异常 常用类 容器 多线程 IO 网络编程 反射 注解</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -274,6 +301,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2020/11/24/MySQL/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MySQL
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -295,7 +336,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">第一章 基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text">java运行环境相关知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Eclipse%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">Eclipse相关操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9"><span class="toc-number">1.3.</span> <span class="toc-text">java基础内容</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">第一章 基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text">java运行环境相关知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Eclipse%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">Eclipse相关操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9"><span class="toc-number">1.3.</span> <span class="toc-text">java基础内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.</span> <span class="toc-text">第二章 面向对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8"><span class="toc-number">3.</span> <span class="toc-text">异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%EF%BC%88%E9%9B%86%E5%90%88%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">容器（集合）</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -332,6 +373,8 @@
     </div>
   </div>
 </footer>
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -405,6 +448,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面向对象 异常 常用类 容器 多线程 IO 网络编程 反射 注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数据库管理 表管理 事务 存储过程 JDBC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JavaScript JQuery</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -560,5 +615,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-10,"vOffset":40},"mobile":{"show":false}});</script></body>
 </html>
